@@ -10,18 +10,23 @@
 </head>
 
 <body>
+    <!-- <img src="abstract-bg.jpg" alt=""> -->
     <form>
         <div>
             <label>Message:</label>
             <input type="text" name="message">
             <br><br>
             <label>Email:</label>
-            <input name="email">
-            <button onClick="formToApi(event,'email')">Send an Email</button>
+            <div class="input-wrapper">
+                <input name="email">
+                <button onClick="formToApi(event,'email')">Send an Email</button>
+            </div>
             <br><br>
             <label>SMS:</label>
-            <input name="sms">
-            <button onClick="formToApi(event,'sms')">Send a SMS</button>
+            <div class="input-wrapper">
+                <input name="sms">
+                <button onClick="formToApi(event,'sms')">Send a SMS</button>
+            </div>
         </div>
     </form>
     <script src="formToApi.js"></script>
