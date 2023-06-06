@@ -1,15 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #893A3D;
     margin: 0;
     padding: 20px;
+    background-image: url('abstract-bg.jpg');
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
+    width: 400px;
+    margin: 10% auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2.5em;
+    border-radius: 3em;
+    backdrop-filter: blur(40px);
+    border: solid 2px transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
 }
 
 label {
@@ -43,3 +53,42 @@ button:hover {
 button:active {
     background-color: #3e8e41;
 }
+
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.input-wrapper input {
+    flex: 2;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    /* CSS rules for mobile screens */
+
+    .input-wrapper {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+  }
+
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablet screens */
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 1024px) {
+    /* CSS rules for desktop screens */
+  }

@@ -1,14 +1,17 @@
 function formToApi(event, typeOfSending) {
   event.preventDefault();
+  const formContent = document.getElementById("form-content");
 
   const apiUrl =
     "https://in6sf8xh4l.execute-api.us-east-1.amazonaws.com/SendingStage/sending";
+
+  // prettier-ignore
 
   let data = {
     typeOfSending: typeOfSending,
     destinationEmail: document.getElementsByName("email")[0].value,
     phoneNumber: document.getElementsByName("sms")[0].value,
-    message: document.getElementsByName("message")[0].value,
+    message: document.getElementsByName("message")[0].value
   };
 
 
@@ -20,17 +23,12 @@ function formToApi(event, typeOfSending) {
     body: JSON.stringify(data),
     mode: "no-cors",
   })
-    .then((response) => {
-      if (response.ok) {
-        console.log("Message sent successfully");
-      } else {
-        let code = `Status Code: ${response.status}`;
-        throw new Error(
-          `Error sending message. Please check your network connection or CORS settings.`
-        );
-      }
+    .then((res) => res.json())
+    .then((data) => {
+      formContent.innerHTML = `<h3 class="success">Message was sent successfully please check your phone or email</h3>`;
     })
-    .catch((error) => {
-      console.error("Error sending message:", error);
+    .catch((err) => {
+      formContent.innerHTML = `<h3 class="error">Something went wrong, please Refresh and try again</h3>`;
+      console.error(err);
     });
 }
