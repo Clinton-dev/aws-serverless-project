@@ -4,11 +4,13 @@ function formToApi(event, typeOfSending) {
   const apiUrl =
     "https://in6sf8xh4l.execute-api.us-east-1.amazonaws.com/SendingStage/sending";
 
+  // prettier-ignore
+
   let data = {
     typeOfSending: typeOfSending,
     destinationEmail: document.getElementsByName("email")[0].value,
     phoneNumber: document.getElementsByName("sms")[0].value,
-    message: document.getElementsByName("message")[0].value,
+    message: document.getElementsByName("message")[0].value
   };
 
   fetch(apiUrl, {
@@ -19,14 +21,7 @@ function formToApi(event, typeOfSending) {
     body: JSON.stringify(data),
     mode: "no-cors",
   })
-    .then((response) => {
-      if (response.ok) {
-        console.alert("Message sent successfully");
-      } else {
-        console.error("Error sending message");
-      }
-    })
-    .catch((error) => {
-      console.error("Error sending message:", error);
-    });
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
 }

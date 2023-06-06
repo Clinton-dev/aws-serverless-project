@@ -4,18 +4,15 @@ body {
     margin: 0;
     padding: 20px;
     background-image: url('abstract-bg.jpg');
-    background-repeat: no-repeat;
-    /* background-size: contain; */
-    background-size: cover;
+    background-clip: border-box;
     background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 }
 
 form {
-    position: absolute;
-    top: 10rem;
-    left: 30rem;
-    min-width: 400px;
-    display: inline-block;
+    width: 400px;
+    margin: 10% auto;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 2.5em;
     border-radius: 3em;
@@ -57,14 +54,6 @@ button:active {
     background-color: #3e8e41;
 }
 
-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100vh;
-    width: 100vw;
-}
 
 .input-wrapper {
     display: flex;
@@ -75,3 +64,23 @@ img {
 .input-wrapper input {
     flex: 2;
 }
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    /* CSS rules for mobile screens */
+
+    .input-wrapper {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+  }
+
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablet screens */
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 1024px) {
+    /* CSS rules for desktop screens */
+  }
