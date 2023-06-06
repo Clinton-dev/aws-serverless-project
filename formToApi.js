@@ -1,5 +1,6 @@
 function formToApi(event, typeOfSending) {
   event.preventDefault();
+  const formContent = document.getElementById("form-content");
 
   const apiUrl =
     "https://in6sf8xh4l.execute-api.us-east-1.amazonaws.com/SendingStage/sending";
@@ -22,6 +23,11 @@ function formToApi(event, typeOfSending) {
     mode: "no-cors",
   })
     .then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+    .then((data) => {
+      formContent.innerHTML = `<h3 class="success">Message was sent successfully please check your phone or email</h3>`;
+    })
+    .catch((err) => {
+      formContent.innerHTML = `<h3 class="error">Something went wrong, please Refresh and try again</h3>`;
+      console.error(err);
+    });
 }

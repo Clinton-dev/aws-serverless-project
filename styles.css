@@ -65,6 +65,14 @@ button:active {
     flex: 2;
 }
 
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
 /* Mobile */
 @media screen and (max-width: 767px) {
     /* CSS rules for mobile screens */
