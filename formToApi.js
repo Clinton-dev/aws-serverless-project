@@ -11,6 +11,7 @@ function formToApi(event, typeOfSending) {
     message: document.getElementsByName("message")[0].value,
   };
 
+
   fetch(apiUrl, {
     method: "POST",
     headers: {
@@ -21,9 +22,12 @@ function formToApi(event, typeOfSending) {
   })
     .then((response) => {
       if (response.ok) {
-        console.alert("Message sent successfully");
+        console.log("Message sent successfully");
       } else {
-        console.error("Error sending message");
+        let code = `Status Code: ${response.status}`;
+        throw new Error(
+          `Error sending message. Please check your network connection or CORS settings.`
+        );
       }
     })
     .catch((error) => {
