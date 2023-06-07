@@ -1,3 +1,11 @@
+async function handleResponse(res) {
+  if (res.ok) {
+    return await res.json();
+  } else {
+    throw new Error("Server Error " + res.status);
+  }
+}
+
 function formToApi(event, typeOfSending) {
   event.preventDefault();
   const formContent = document.getElementById("form-content");
@@ -22,9 +30,10 @@ function formToApi(event, typeOfSending) {
     body: JSON.stringify(data),
     mode: "no-cors",
   })
-    .then((res) => res.json())
+    .then(handleResponse)
     .then((data) => {
       formContent.innerHTML = `<h3 class="success">Message was sent successfully please check your phone or email</h3>`;
+      console.dir(data);
     })
     .catch((err) => {
       formContent.innerHTML = `<h3 class="error">Something went wrong, please Refresh and try again</h3>`;
