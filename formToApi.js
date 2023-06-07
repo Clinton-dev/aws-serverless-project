@@ -22,6 +22,7 @@ function formToApi(event, typeOfSending) {
     message: document.getElementsByName("message")[0].value
   };
 
+
   fetch(apiUrl, {
     method: "POST",
     headers: {
