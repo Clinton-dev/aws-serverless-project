@@ -60,6 +60,17 @@ To use the User Communication project, follow these steps:
 3. Step Functions will orchestrate the process based on the user's choice, invoking either the Email Lambda or SMS Lambda function.
 4. The selected Lambda function will send the personalized message to the user using the specified communication method (email or SMS).
 
+## Contributing
+Contributions to the project are welcome! If you would like to contribute, please check the Issues tab for existing issues or feature requests. If you find an issue or have an idea for a new feature, please create a new issue to discuss it.
+
+To contribute to the project, follow these guidelines:
+
+  1. Fork the repository and create a new branch for your contribution.
+  2. Make your changes, ensuring that your code follows the project's coding style and guidelines.
+  3. Commit your changes and push them to your forked repository.
+  4. Submit a pull request, describing the changes you've made and referencing the corresponding issue.
+Please note that all contributions are subject to review and approval. By contributing to this project, you agree to license your contributions under the MIT License.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
